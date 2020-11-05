@@ -7,14 +7,42 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'monProjet';
-  etudiants = [
-    {nom:'Amir', moyenne:15.5, ville:'Tunis'},
-    {nom:'Mouna', moyenne:14.2, ville:'Sfax'},
-    {nom:'Sami', moyenne:8.75, ville:'Sousse'},
-    {nom:'Sameh', moyenne:12.42, ville:'Tunis'},
-    {nom:'Mounir', moyenne:13.87, ville:'Nabeul'},
-    {nom:'Siwar', moyenne:7.9, ville:'Tunis'},
-    {nom:'Karim', moyenne:12.56, ville:'Sfax'},
-    {nom:'Ahlem', moyenne:9.96, ville:'Sousse'}
-  ]
+
+  aliment ={nom:'yaourt', prix: 0.6, image:"assets/Alimentation/yaourt.jpg", frais:true};
+  aliments= [
+    {
+        nom:"Lait",
+        image:"assets/Alimentation/lait.jpg",
+        prix:1.2,
+        frais:true
+    },
+    {
+        nom:"Pâtes",
+        image:"assets/Alimentation/pate.jpg",
+        prix:0.41,
+        frais:true
+    }
+    ,
+    {
+        nom:"Tomate en conserve",
+        image:"assets/Alimentation/tomate.jpg",
+        prix:1.8,
+        frais:true
+    },
+
+];
+  onAfficher(){
+    alert(this.aliment.nom + " "+ this.aliment.prix+ " "+ this.aliment.frais);
+  }
+
+  nbFrais(){
+  let compteur =0;
+  for(let al of this.aliments ){
+    if(al.frais)
+      compteur ++;
+  }
+  return compteur;
+
+  }
+  
 }
